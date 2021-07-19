@@ -3,6 +3,7 @@ const inquirer = require("inquirer")
 const mysql = require("mysql")
 const cTable = require('console.table');
 const { connect } = require("http2");
+const { start } = require("repl");
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -65,11 +66,22 @@ funciton startPrompt() {
     })
 }
 
+// View All Employees
 function viewAllEmployees() {
-    connection.query("SELECT employee.first_name, employee.last_name, role.title, role.salary, department.name, CONCAT(e.first_name, ' ', e.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left joihn employee e on employee.manager_id = e.id;"
+    connection.query("SELECT employee.first_name, employee.last_name, role.title, role.salary, department.name, CONCAT(e.first_name, ' ', e.last_name) AS Manager FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department on department.id = role.department_id left joihn employee e on employee.manager_id = e.id;",
     function(err, res) {
         if (err) throw err
         console.log(res)
         startPrompt()
+    })
+}
+
+//  View All Roles
+function viewAllRoles() {
+    connection.query("SELECT employee.first_name, employee.last_name, department.name, AS Department FROM employee JOIN role ON employee.role_id = role.id JOIN department ON role.departmnt_id = department.id ORDER BY employee.id;",
+    function(err, res) {
+        if (err) throw err 
+        console.table(res)
+        startPrompt
     })
 }
