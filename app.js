@@ -122,3 +122,29 @@ function selectManager() {
     })
     return managersArr;
 }
+
+// Add Employee Role 
+function addRole() {
+    connection.query("SELECT role.title AS Title, role.salary AS Salary FROM role", function(err, res) {
+        inquirer.prompt([
+            {
+                name: "Title",
+                type: "input",
+                message: "What is the roles Title?"
+            },
+            {
+                name: "Salary",
+                type: "input",
+                message: "Whatt is the Salary?"
+            }
+        ]).then(function(res) {
+            connection.query(
+                "INSERT INTO role SET ?",
+                {
+                    title: res.Title,
+                    salary: res.Salary,
+                }
+            )
+        });
+    });
+}
