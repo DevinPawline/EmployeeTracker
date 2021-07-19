@@ -18,3 +18,49 @@ connection.connect(function(err) {
     console.log("Connected as ID " + connection.threadId)
     startPrompt();
 });
+
+// Inital Prompt
+funciton startPrompt() {
+    inquirer.prompt([
+        {
+        type: "list",
+        message: "What would you like to do?",
+        name: "choice",
+        choices: [
+                "View All Employees?",
+                "View All Employees By Roles?",
+                "View All Employees By Department?",
+                "Update Employee?",
+                "Add Role?",
+                "Add Department?"
+                ]
+            }   
+]).then(function(val) {
+    switch (val.choice) {
+        case "View All Employees?":
+            viewAllEmployees();
+        break;
+
+        case "View All Employees By Roles?":
+            viewAllRoles();
+        break;
+
+        case "View All Employees By Department?": 
+            viewAllDepartments();
+        break;
+
+        case "Update Employee?":
+            updateEmployee();
+        break;
+
+        case "Add Role?":
+            addRole();
+        break;
+
+        case "Add Department?":
+            addDepartment();
+        break;
+
+        }
+    })
+}
