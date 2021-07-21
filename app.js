@@ -2,16 +2,13 @@
 const inquirer = require("inquirer")
 const mysql = require("mysql")
 const cTable = require('console.table');
-const { connect } = require("http2");
-const { start } = require("repl");
-const { restoreDefaultPrompts } = require("inquirer");
 
 const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
     password: "0e5#97Dp"
-    database: "employee_trackerDB"
+    database: "employee-trackerDB"
 });
 
 // Connection ID 
@@ -147,4 +144,29 @@ function addRole() {
             )
         });
     });
+}
+
+//============= Add Department ==========================//
+function addDepartment() { 
+
+    inquirer.prompt([
+        {
+          name: "name",
+          type: "input",
+          message: "What Department would you like to add?"
+        }
+    ]).then(function(res) {
+        var query = connection.query(
+            "INSERT INTO department SET ? ",
+            {
+              name: res.name
+            
+            },
+            function(err) {
+                if (err) throw err
+                console.table(res);
+                startPrompt();
+            }
+        )
+    })
 }
