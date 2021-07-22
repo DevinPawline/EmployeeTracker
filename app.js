@@ -37,6 +37,7 @@ connection.connect(err => {
     prompt();
 });
 
+// Prompt with list of options of what to do
 function prompt() {
     inquirer
         .prompt({
@@ -54,6 +55,7 @@ function prompt() {
                 promptMessages.exit
             ]
         })
+        // .then to run function of whatever option they selected
         .then(answer => {
             console.log('answer', answer);
             switch (answer.action) {
@@ -91,7 +93,7 @@ function prompt() {
             }
         });
 }
-
+// View All Employees
 function viewAllEmployees() {
     const query = `SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name AS department, role.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager
     FROM employee
@@ -108,7 +110,7 @@ function viewAllEmployees() {
         prompt();
     });
 }
-
+// View All Departments
 function viewByDepartment() {
     const query = `SELECT department.name AS department, role.title, employee.id, employee.first_name, employee.last_name
     FROM employee
