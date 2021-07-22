@@ -251,7 +251,7 @@ function remove(input) {
 
     });
 };
-
+// Delete employee by searching their ID
 async function removeEmployee() {
 
     const answer = await inquirer.prompt([
@@ -274,7 +274,7 @@ async function removeEmployee() {
     prompt();
 
 };
-
+// Function to ask once you've chosen if you know their ID or not 
 function askId() {
     return ([
         {
@@ -285,7 +285,7 @@ function askId() {
     ]);
 }
 
-
+// Update Role Function, using prompts and connection querty to update and join data
 async function updateRole() {
     const employeeId = await inquirer.prompt(askId());
 
@@ -315,7 +315,7 @@ async function updateRole() {
         });
     });
 }
-
+// Ask name function for update role
 function askName() {
     return ([
         {
