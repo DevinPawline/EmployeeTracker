@@ -1,25 +1,25 @@
 {
-    "name": "employee-tracker",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "respository": {
-        "type": "git",
-        "url": "git+https://github.com/DevinPawline/EmployeeTracker"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/DevinPawline/EmployeeTracker/issues"
-    },
-    "homepage": "https://github.com/DevinPawline/EmployeeTracker/issues",
-    "dependencies": {
-        "console.table": "^0.10.0",
-        "inquirer": "^7.0.3",
-        "mysql": "^2.17.1"
-    }
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevinPawline/EmployeeTracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevinPawline/EmployeeTracker/issues"
+  },
+  "homepage": "https://github.com/cmelby/employee-tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.0.3",
+    "mysql": "^2.17.1"
+  }
 }
