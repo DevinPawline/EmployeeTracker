@@ -1,9 +1,10 @@
+// Dependencies
 const mysql = require('mysql');
 const inquirer = require('inquirer');
 require('console.table');
 
 
-
+// Prompt Options
 const promptMessages = {
     viewAllEmployees: "View All Employees",
     viewByDepartment: "View All Employees By Department",
@@ -16,6 +17,7 @@ const promptMessages = {
     exit: "Exit"
 };
 
+// Connection to mySQL
 const connection = mysql.createConnection({
     host: 'localhost',
 
@@ -29,7 +31,7 @@ const connection = mysql.createConnection({
     password: '0e5#97Dp',
     database: 'employee_trackerDB'
 });
-
+// Connection error 
 connection.connect(err => {
     if (err) throw err;
     prompt();
