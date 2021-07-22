@@ -127,7 +127,7 @@ function viewByDepartment() {
     });
 }
 
-
+// View by Managers
 function viewByManager() {
     const query = `SELECT CONCAT(manager.first_name, ' ', manager.last_name) AS manager, department.name AS department, employee.id, employee.first_name, employee.last_name, role.title
     FROM employee
@@ -144,7 +144,7 @@ function viewByManager() {
         prompt();
     });
 }
-
+// View All Roles
 function viewAllRoles() {
     const query = `SELECT role.title, employee.id, employee.first_name, employee.last_name, department.name AS department
     FROM employee
@@ -161,7 +161,7 @@ function viewAllRoles() {
     });
 
 }
-
+// Function to add employee, connection query to join data
 async function addEmployee() {
     const addname = await inquirer.prompt(askName());
     connection.query('SELECT role.id, role.title FROM role ORDER BY role.id;', async (err, res) => {
@@ -228,6 +228,7 @@ async function addEmployee() {
     });
 
 }
+// Function to remove an employee, .then funtion to determine remove or update role function being fun
 function remove(input) {
     const promptQ = {
         yes: "yes",
