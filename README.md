@@ -11,7 +11,7 @@ Using mySQL create a database to store employee data and then join it in JS to u
 In order to install the necessary dependencies, open the console and run the following:
 ```npm i```
 ### Usage:
-No contributions to this repo needed
+Make sure to install dependencies before running in Node
 ### License:
 This project is licensed under:
 MIT
