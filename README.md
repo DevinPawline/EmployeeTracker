@@ -4,8 +4,6 @@ Using mySQL create a database to store employee data and then join it in JS to u
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
 * [Questions](#questions)
 ### Installation:
 In order to install the necessary dependencies, open the console and run the following:
